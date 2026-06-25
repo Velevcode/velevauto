@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Велев Ауто — Автосервиз в гр. Пазарджик. Ремонти, смяна на масло, ГТП, застраховки, регистрация на газови уредби — АГУ.">
+  <meta name="keywords" content="автосервиз Пазарджик, ГТП Пазарджик, ремонт на коли, АГУ регистрация, 3D стенд, Велев Ауто">
+  <title>Велев Ауто — Автосервиз в гр. Пазарджик</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#2563eb;--dark:#1a3a5c;--light:#f0f2f5;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;--white:#fff;--radius:10px}
+    body{font-family:system-ui,sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    nav{background:var(--white);border-bottom:0.5px solid var(--border);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:60px}
+    .logo{color:var(--dark);font-size:1.2rem;font-weight:600;display:flex;align-items:center;gap:8px}
+    .logo i{color:var(--blue);font-size:20px}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{color:var(--muted);font-size:14px;transition:color .2s}
+    .nav-links a:hover{color:var(--blue)}
+    .hamburger{display:none;color:var(--dark);font-size:22px;cursor:pointer;background:none;border:none;padding:4px}
+    .mobile-menu{display:none;flex-direction:column;background:var(--white);border-bottom:0.5px solid var(--border);padding:1rem 1.5rem;gap:.75rem}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{color:var(--muted);font-size:15px;padding:.5rem 0;border-bottom:0.5px solid var(--border)}
+    section{padding:3rem 1.5rem;max-width:900px;margin:0 auto}
+    .hero{background:var(--light);padding:3.5rem 1.5rem;text-align:center;max-width:100%;margin:0;border-bottom:0.5px solid var(--border)}
+    .hero h1{font-size:clamp(1.6rem,5vw,2.4rem);font-weight:600;line-height:1.25;margin-bottom:.75rem;color:var(--dark)}
+    .hero h1 span{color:var(--blue)}
+    .hero p{font-size:1rem;color:var(--muted);max-width:560px;margin:0 auto 1.5rem}
+    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn-primary{background:var(--blue);color:#fff;padding:.7rem 1.6rem;border-radius:var(--radius);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s}
+    .btn-primary:hover{opacity:.85}
+    .btn-outline{border:1.5px solid var(--border);color:var(--dark);padding:.7rem 1.6rem;border-radius:var(--radius);font-size:15px;display:inline-flex;align-items:center;gap:6px;background:var(--white);transition:border-color .2s}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+    .section-title{font-size:1.5rem;font-weight:600;color:var(--dark);margin-bottom:.5rem}
+    .section-sub{color:var(--muted);font-size:15px;margin-bottom:2rem}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+    .service-card{background:var(--white);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .2s,box-shadow .2s}
+    .service-card:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(37,99,235,0.08)}
+    .service-icon{width:48px;height:48px;background:#eff6ff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .service-icon i{font-size:24px;color:var(--blue)}
+    .service-card h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--dark)}
+    .service-list{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:4px}
+    .service-list li{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+    .service-list li i{color:var(--blue);font-size:14px}
+    .price-tag{display:inline-block;margin-top:.75rem;background:#eff6ff;color:var(--blue);font-size:13px;font-weight:600;padding:.3rem .8rem;border-radius:6px;border:0.5px solid #bfdbfe}
+    .why-section{background:var(--light);max-width:100%;padding:2.5rem 1.5rem;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+    .why-inner{max-width:900px;margin:0 auto}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .why-card{background:var(--white);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;text-align:center}
+    .why-card i{font-size:28px;color:var(--blue);margin-bottom:.5rem}
+    .why-card h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:.25rem}
+    .why-card p{font-size:13px;color:var(--muted)}
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .contact-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem}
+    .contact-item-icon{width:40px;height:40px;background:#eff6ff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .contact-item-icon i{font-size:18px;color:var(--blue)}
+    .contact-item h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:4px}
+    .contact-item p{font-size:14px;color:var(--muted)}
+    .phone-row{display:flex;flex-direction:column;gap:6px;margin-top:2px}
+    .phone-entry{display:flex;flex-direction:column;gap:1px}
+    .phone-num{font-size:14px;color:var(--muted)}
+    .phone-label{font-size:11px;color:var(--blue);font-weight:500;text-transform:uppercase;letter-spacing:.3px}
+    .hours-table{width:100%;border-collapse:collapse;font-size:14px}
+    .hours-table tr{border-bottom:0.5px solid var(--border)}
+    .hours-table td{padding:.5rem .25rem;color:var(--muted)}
+    .hours-table td:last-child{text-align:right;color:var(--text);font-weight:500}
+    .cta-band{background:var(--blue);padding:2.5rem 1.5rem;text-align:center;max-width:100%;margin:0}
+    .cta-band h2{color:#fff;font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
+    .cta-band p{color:rgba(255,255,255,0.85);font-size:15px;margin-bottom:1.25rem}
+    .btn-white{background:#fff;color:var(--blue);padding:.7rem 1.6rem;border-radius:var(--radius);font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+    footer{background:var(--dark);color:rgba(255,255,255,0.6);text-align:center;padding:1.25rem 1.5rem;font-size:13px}
+    footer strong{color:rgba(255,255,255,0.9)}
+    .divider{border:none;border-top:0.5px solid var(--border);margin:0}
+    @media(max-width:640px){.nav-links{display:none}.hamburger{display:block}.contact-wrap{grid-template-columns:1fr}section{padding:2.5rem 1.25rem}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><i class="ti ti-car"></i> Велев Ауто</div>
+  <div class="nav-links">
+    <a href="#services">Услуги</a>
+    <a href="#why">Защо ние</a>
+    <a href="#contact">Контакти</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Меню"><i class="ti ti-menu-2"></i></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Услуги</a>
+  <a href="#why" onclick="toggleMenu()">Защо ние</a>
+  <a href="#contact" onclick="toggleMenu()">Контакти</a>
+</div>
+
+<div class="hero">
+  <h1><span>Автосервиз в гр. Пазарджик</span></h1>
+  <p>Ремонти, смяна на масло, ГТП, застраховки, регистрация на газови уредби — АГУ</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary"><i class="ti ti-phone"></i> Свържете се</a>
+    <a href="#services" class="btn-outline"><i class="ti ti-list"></i> Нашите услуги</a>
+  </div>
+</div>
+
+<section id="services">
+  <p class="section-title">Нашите услуги</p>
+  <p class="section-sub">Предлагаме пълен набор от авто услуги на едно място</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-tool"></i></div>
+      <h3>Ремонт на автомобили</h3>
+      <ul class="service-list">
+        <li><i class="ti ti-check"></i> Смяна на масло и филтри</li>
+        <li><i class="ti ti-check"></i> Обслужване</li>
+        <li><i class="ti ti-check"></i> Ходова част</li>
+        <li><i class="ti ti-check"></i> Спирачна система</li>
+        <li><i class="ti ti-check"></i> Ремонти</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-clipboard-check"></i></div>
+      <h3>Годишен технически преглед</h3>
+      <ul class="service-list">
+        <li><i class="ti ti-check"></i> Преглед на коли, бусове и ремаркета</li>
+        <li><i class="ti ti-check"></i> Застраховка гражданска отговорност</li>
+        <li><i class="ti ti-check"></i> Напомняне за изтичащ преглед/застраховка</li>
+        <li><i class="ti ti-check"></i> Първоначална регистрация на АГУ</li>
+      </ul>
+      <span class="price-tag">40 € за лек автомобил</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-flame"></i></div>
+      <h3>Регистрация на АГУ</h3>
+      <ul class="service-list">
+        <li><i class="ti ti-check"></i> Първоначална регистрация на газови и метанови уредби</li>
+        <li><i class="ti ti-check"></i> Технически преглед на АГУ</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="ti ti-3d-cube-sphere"></i></div>
+      <h3>3D стенд</h3>
+      <ul class="service-list">
+        <li><i class="ti ti-check"></i> Реглаж на преден мост</li>
+        <li><i class="ti ti-check"></i> Реглаж на заден мост</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="why-section" id="why">
+  <div class="why-inner">
+    <p class="section-title">Защо да изберете нас?</p>
+    <p class="section-sub">Доверявате ни се с вашия автомобил — ние се грижим за него като за свой</p>
+    <div class="why-grid">
+      <div class="why-card"><i class="ti ti-clock-check"></i><h4>Бързо обслужване</h4><p>Минимално чакане, максимална ефективност</p></div>
+      <div class="why-card"><i class="ti ti-shield"></i><h4>Гаранция</h4><p>Гаранция на всички извършени ремонти</p></div>
+      <div class="why-card"><i class="ti ti-calendar-stats"></i><h4>20+ години опит</h4><p>Дългогодишен опит в автосервизното обслужване</p></div>
+      <div class="why-card"><i class="ti ti-building-store"></i><h4>Всичко на едно място</h4><p>Всичко необходимо за автомобила ви на едно място</p></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<section id="contact">
+  <p class="section-title">Контакти</p>
+  <p class="section-sub">Намерете ни или се свържете с нас директно</p>
+  <div class="contact-wrap">
+    <div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="ti ti-map-pin"></i></div>
+        <div><h4>Адрес</h4><p>ул. Димчо Дебелянов 26, гр. Пазарджик</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="ti ti-phone"></i></div>
+        <div>
+          <h4>Телефони</h4>
+          <div class="phone-row">
+            <div class="phone-entry">
+              <span class="phone-num">0890 000 000</span>
+              <span class="phone-label">Ремонти</span>
+            </div>
+            <div class="phone-entry">
+              <span class="phone-num">0890 000 000</span>
+              <span class="phone-label">Запазване на час за ГТП</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="ti ti-mail"></i></div>
+        <div><h4>Имейл</h4><p>velev_auto@abv.bg</p></div>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:1rem">Работно време</h4>
+      <table class="hours-table">
+        <tr><td>Понеделник – Петък</td><td>09:00 – 18:00</td></tr>
+        <tr><td>Събота</td><td>Почивен ден</td></tr>
+        <tr><td>Неделя</td><td>Почивен ден</td></tr>
+      </table>
+      <a href="mailto:velev_auto@abv.bg" class="btn-primary" style="display:inline-flex;margin-top:1.5rem;width:100%;justify-content:center"><i class="ti ti-mail"></i> Пишете ни</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Готови ли сте да запазите час?</h2>
+  <p>Свържете се с нас и ще ви обслужим бързо и качествено.</p>
+  <a href="mailto:velev_auto@abv.bg" class="btn-white"><i class="ti ti-mail"></i> velev_auto@abv.bg</a>
+</div>
+
+<footer>
+  <strong>Велев Ауто</strong> · гр. Пазарджик · Автосервиз и ГТП<br>
+  <span style="font-size:12px;margin-top:4px;display:block">© 2026 Велев Ауто. Всички права запазени.</span>
+</footer>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+    });
+  });
+</script>
+</body>
+</html>

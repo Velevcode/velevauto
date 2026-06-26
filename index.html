@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Велев Ауто — Автосервиз в гр. Пазарджик. Ремонти, смяна на масло, ГТП, застраховки, регистрация на газови уредби — АГУ.">
+  <meta name="description" content="Велев Ауто — Автосервиз в гр. Пазарджик. Ремонти, смяна на масло, ГТП, застраховки, регистрация на газови уредби — АГУ, стенд преден и заден мост.">
   <meta name="keywords" content="автосервиз Пазарджик, ГТП Пазарджик, ремонт на коли, АГУ регистрация, 3D стенд, Велев Ауто">
   <title>Велев Ауто — Автосервиз в гр. Пазарджик</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -30,8 +30,6 @@
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn-primary{background:var(--blue);color:#fff;padding:.7rem 1.6rem;border-radius:var(--radius);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s}
     .btn-primary:hover{opacity:.85}
-    .btn-outline{border:1.5px solid var(--border);color:var(--dark);padding:.7rem 1.6rem;border-radius:var(--radius);font-size:15px;display:inline-flex;align-items:center;gap:6px;background:var(--white);transition:border-color .2s}
-    .btn-outline:hover{border-color:var(--blue);color:var(--blue)}
     .section-title{font-size:1.5rem;font-weight:600;color:var(--dark);margin-bottom:.5rem}
     .section-sub{color:var(--muted);font-size:15px;margin-bottom:2rem}
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
@@ -55,16 +53,19 @@
     .contact-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem}
     .contact-item-icon{width:40px;height:40px;background:#eff6ff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .contact-item-icon i{font-size:18px;color:var(--blue)}
-    .contact-item h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:4px}
+    .contact-item h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px}
     .contact-item p{font-size:14px;color:var(--muted)}
-    .phone-row{display:flex;flex-direction:column;gap:6px;margin-top:2px}
-    .phone-entry{display:flex;flex-direction:column;gap:1px}
-    .phone-num{font-size:14px;color:var(--muted)}
-    .phone-label{font-size:11px;color:var(--blue);font-weight:500;text-transform:uppercase;letter-spacing:.3px}
+    .phone-table{border-collapse:collapse;margin-top:4px}
+    .phone-table td{padding:3px 0;font-size:14px;vertical-align:middle}
+    .phone-table td.label{color:var(--blue);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px;padding-right:12px;white-space:nowrap}
+    .phone-table td.num{color:var(--muted)}
     .hours-table{width:100%;border-collapse:collapse;font-size:14px}
     .hours-table tr{border-bottom:0.5px solid var(--border)}
     .hours-table td{padding:.5rem .25rem;color:var(--muted)}
     .hours-table td:last-child{text-align:right;color:var(--text);font-weight:500}
+    .call-btns{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+    .btn-call{background:var(--blue);color:#fff;padding:.7rem 1.2rem;border-radius:var(--radius);font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s}
+    .btn-call:hover{opacity:.85}
     .cta-band{background:var(--blue);padding:2.5rem 1.5rem;text-align:center;max-width:100%;margin:0}
     .cta-band h2{color:#fff;font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
     .cta-band p{color:rgba(255,255,255,0.85);font-size:15px;margin-bottom:1.25rem}
@@ -94,10 +95,10 @@
 
 <div class="hero">
   <h1><span>Автосервиз в гр. Пазарджик</span></h1>
-  <p>Ремонти, смяна на масло, ГТП, застраховки, регистрация на газови уредби — АГУ</p>
+  <p>Ремонти, смяна на масло, ГТП, застраховки, регистрация на газови уредби — АГУ, стенд преден и заден мост</p>
   <div class="hero-btns">
-    <a href="#contact" class="btn-primary"><i class="ti ti-phone"></i> Свържете се</a>
-    <a href="#services" class="btn-outline"><i class="ti ti-list"></i> Нашите услуги</a>
+    <a href="tel:+359896870130" class="btn-primary"><i class="ti ti-phone"></i> Запази час за ГТП</a>
+    <a href="tel:+359894439069" class="btn-primary"><i class="ti ti-phone"></i> Запази час за ремонт</a>
   </div>
 </div>
 
@@ -163,7 +164,6 @@
 
 <section id="contact">
   <p class="section-title">Контакти</p>
-  <p class="section-sub">Намерете ни или се свържете с нас директно</p>
   <div class="contact-wrap">
     <div>
       <div class="contact-item">
@@ -173,17 +173,11 @@
       <div class="contact-item">
         <div class="contact-item-icon"><i class="ti ti-phone"></i></div>
         <div>
-          <h4>Телефони</h4>
-          <div class="phone-row">
-            <div class="phone-entry">
-              <span class="phone-num">0890 000 000</span>
-              <span class="phone-label">Ремонти</span>
-            </div>
-            <div class="phone-entry">
-              <span class="phone-num">0890 000 000</span>
-              <span class="phone-label">Запазване на час за ГТП</span>
-            </div>
-          </div>
+          <h4>Запази час за:</h4>
+          <table class="phone-table">
+            <tr><td class="label">Ремонти</td><td class="num">+359 89 4439069</td></tr>
+            <tr><td class="label">ГТП</td><td class="num">+359 89 6870130</td></tr>
+          </table>
         </div>
       </div>
       <div class="contact-item">
@@ -195,10 +189,11 @@
       <h4 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:1rem">Работно време</h4>
       <table class="hours-table">
         <tr><td>Понеделник – Петък</td><td>09:00 – 18:00</td></tr>
-        <tr><td>Събота</td><td>Почивен ден</td></tr>
-        <tr><td>Неделя</td><td>Почивен ден</td></tr>
       </table>
-      <a href="mailto:velev_auto@abv.bg" class="btn-primary" style="display:inline-flex;margin-top:1.5rem;width:100%;justify-content:center"><i class="ti ti-mail"></i> Пишете ни</a>
+      <div class="call-btns">
+        <a href="tel:+359896870130" class="btn-call"><i class="ti ti-phone"></i> Запази час за ГТП</a>
+        <a href="tel:+359894439069" class="btn-call"><i class="ti ti-phone"></i> Запази час за ремонт</a>
+      </div>
     </div>
   </div>
 </section>
@@ -206,7 +201,10 @@
 <div class="cta-band">
   <h2>Готови ли сте да запазите час?</h2>
   <p>Свържете се с нас и ще ви обслужим бързо и качествено.</p>
-  <a href="mailto:velev_auto@abv.bg" class="btn-white"><i class="ti ti-mail"></i> velev_auto@abv.bg</a>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:+359896870130" class="btn-white"><i class="ti ti-phone"></i> Запази час за ГТП</a>
+    <a href="tel:+359894439069" class="btn-white"><i class="ti ti-phone"></i> Запази час за ремонт</a>
+  </div>
 </div>
 
 <footer>
